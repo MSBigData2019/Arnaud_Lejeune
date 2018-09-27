@@ -38,6 +38,32 @@ print_words() and print_top().
 """
 
 import sys
+import operator
+
+def aux(filename) :
+  f = open(filename,"r")
+  words = f.read().split()
+  dic = {}
+  for word in words :
+    word = word.lower()
+    if word not in dic :
+      dic[word] = 1
+    else :
+      dic[word]+=1
+  sorted_words = sorted(dic.items(), key=operator.itemgetter(1), reverse = True)
+  return sorted_words
+
+def print_words(filename) :
+  words = aux(filename)
+  for [word,count] in words :
+    print(word+" "+str(count))
+
+def print_top(filename):
+  words = aux(filename)
+  i = 0
+  for [word,count] in words[:20]:
+    print(word+" "+str(count))
+    i+=1
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.

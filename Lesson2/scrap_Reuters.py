@@ -34,11 +34,16 @@ def getAction(soup):
 
 	""" --- Price Change --- """
 	change_spans = header.find(class_="sectionQuote priceChange").find(class_="valueContent").find_all('span')[0].text
+	selectedChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."]
 	temp = ""
 	for car in change_spans:
-		if (car!="€"):
+		if car in selectedChar:
 			temp+=car
-	change = [float(temp)]
+	if temp.strip() == "" :
+		temp = "--"
+	else :
+		temp = float(temp)
+	change = [temp]
 	return action + change
 
 """

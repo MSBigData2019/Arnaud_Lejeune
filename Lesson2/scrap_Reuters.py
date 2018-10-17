@@ -5,9 +5,12 @@ from bs4 import BeautifulSoup
 link_LVMH = 'https://www.reuters.com/finance/stocks/financial-highlights/LVMH.PA'
 link_Airbus = 'https://www.reuters.com/finance/stocks/financial-highlights/AIR.PA'
 link_Danone = 'https://www.reuters.com/finance/stocks/financial-highlights/DANO.PA'
-links = [link_LVMH, link_Airbus, link_Danone]
+link_Safran = 'https://www.reuters.com/finance/stocks/financial-highlights/SAF.PA'
+link_GE = 'https://www.reuters.com/finance/stocks/financial-highlights/GE'
 
-Companies = ["LVMH", "Airbus", "Danone"]
+links = [link_LVMH, link_Airbus, link_Danone, link_Safran, link_GE]
+
+Companies = ["LVMH", "Airbus", "Danone", "Safran", "GE"]
 
 """
 	Returns [# of Estimates	, Mean , High , Low , 1 Year Ago]
